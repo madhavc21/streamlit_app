@@ -9,19 +9,13 @@ st.divider()
 uploaded_images = st.file_uploader("Choose images", accept_multiple_files=True, type=['jpg', 'png', 'jpeg'])
 
 # Save uploaded files to 'upload' directory
-for uploaded_image in uploaded_images:
-    if uploaded_image is not None:
-        # Construct the file path
-        file_path = os.path.join('upload', uploaded_image.name)
-        image = Image.open(uploaded_image)
-        image.save(file_path)
-        # Write the file to the specified directory
-        # with open(file_path, "wb") as f:
-        #     f.write(uploaded_image.getbuffer())
-        # st.success(f"Saved File: {uploaded_image.name} to upload directory")
-
-# Accessing files from 'upload' directory
-# You can list the directory contents and do further processing as needed
+if uploaded_images is not None:
+  for uploaded_image in uploaded_images:
+          # Construct the file path
+          file_path = os.path.join('upload', uploaded_image)
+          image = Image.open(uploaded_image)
+          image.save(file_path)
+     
 for filename in os.listdir('upload'):
       st.write(filename)
 
