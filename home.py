@@ -18,7 +18,7 @@ lst2 = ['kurta_men', 'frock', 'jeans', 'shoes', 'gowns', 'pants', 'hoodie', 'sar
 for class_name in lst2:
   s = str.capitalize(class_name.replace("_", " "))
   st.write(f"{s} \n")
+  list= []
   for i in image_file:
-    list= []
     list.append(i)
-    st.image(list, width = 100)
+  st.image(list, width = 100)
