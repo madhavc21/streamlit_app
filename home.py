@@ -24,4 +24,5 @@ for class_name in lst2:
     count +=1
     col = f'col{count}'
     col = st.columns(1)
-    st.image(i, width = 100)
+    with col: 
+      st.image(i, width = 100)
