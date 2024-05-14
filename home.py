@@ -4,9 +4,10 @@ from PIL import Image
 st.title("Virtual Wardrobe")
 st.divider()
 upload = st.file_uploader("Upload new", type=None, accept_multiple_files=True)
-for image in upload:
-  images = Image.open(image)
-  images.save('/workspaces/streamlit_app/upload')
+if upload is not None:
+  for image in upload:
+    images = Image.open(image)
+    images.save('/workspaces/streamlit_app/upload')
 # with open("/workspaces/streamlit_app/upload") as uploaded:
 #   uploaded = upload.read()
 lst2 = ['kurta_men', 'frock', 'jeans', 'shoes', 'gowns', 'pants', 'hoodie', 'saree', 'leggings_and_salwars', 'women_kurta', 'blouse', 'lehenga']
