@@ -19,4 +19,4 @@ for class_name in lst2:
   s = str.capitalize(class_name.replace("_", " "))
   st.write(f"{s} \n")
   for i in image_file:
-    st.image(i)
+    st.image(i, width = 250)
