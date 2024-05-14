@@ -21,8 +21,6 @@ for class_name in lst2:
   st.write(f"{s} \n")
   
   for i in image_file:
-    count +=1
-    col = f'col{count}'
     col = st.columns(1)
     with col: 
       st.image(i, width = 100)
