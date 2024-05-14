@@ -9,8 +9,7 @@ st.divider()
 image_file = st.file_uploader("Choose images", accept_multiple_files=True, type=['jpg', 'png', 'jpeg'])
 
 if image_file is not None:
-    img = Image.open(image_file)
-    st.image(img,height=250,width=250)
+    st.image(image_file,height=250,width=250)
     with open(os.path.join("upload",image_file.name),"wb") as f: 
       f.write(image_file.getbuffer())         
     st.success("Saved File")
