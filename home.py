@@ -20,5 +20,5 @@ for class_name in lst2:
   st.write(f"{s} \n")
   for i in image_file:
     list= []
-    list.appen(i)
+    list.append(i)
     st.image(list, width = 100)
