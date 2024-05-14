@@ -9,7 +9,7 @@ if not os.path.exists('upload'):
     os.makedirs('upload')
 st.write(os.path.abspath('upload'))
 
-flag = True
+flag = False
 if flag == True:
   for i in os.listdir('upload'):
    os.remove(i)
