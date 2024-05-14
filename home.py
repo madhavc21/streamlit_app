@@ -6,22 +6,21 @@ st.title("Virtual Wardrobe")
 st.divider()
 
 # File uploader widget
-uploaded_images = st.file_uploader("Choose images", accept_multiple_files=True, type=['jpg', 'png', 'jpeg'])
+image_file = st.file_uploader("Choose images", accept_multiple_files=True, type=['jpg', 'png', 'jpeg'])
 
-# Save uploaded files to 'upload' directory
-if uploaded_images is not None:
-  for uploaded_image in uploaded_images:
-          # Construct the file path
-          file_path = os.path.join('upload', uploaded_image)
-          image = Image.open(uploaded_image)
-          image.save(file_path)
-     
-for filename in os.listdir('upload'):
-      st.write(filename)
+if image_file is not None:
+    file_details = {"FileName":image_file.name,"FileType":image_file.type}
+    st.write(file_details)
+    img = Image.open(image_file)
+    st.image(img,height=250,width=250)
+    with open(os.path.join("upload",image_file.name),"wb") as f: 
+      f.write(image_file.getbuffer())         
+    st.success("Saved File")
 
 lst2 = ['kurta_men', 'frock', 'jeans', 'shoes', 'gowns', 'pants', 'hoodie', 'saree', 'leggings_and_salwars', 'women_kurta', 'blouse', 'lehenga']
 for class_name in lst2:
   s = str.capitalize(class_name.replace("_", " "))
   st.write(f"{s} \n")
-  for image in os.listdir('upload'): 
-    st.image(image) 
+  for i in os.listdir("upload"):
+    img = Image.open(i)
+    st.image(img)
