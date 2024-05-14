@@ -15,12 +15,10 @@ image_file = st.file_uploader("Choose images", accept_multiple_files=True, type=
 #     st.success("Saved File")
 
 lst2 = ['kurta_men', 'frock', 'jeans', 'shoes', 'gowns', 'pants', 'hoodie', 'saree', 'leggings_and_salwars', 'women_kurta', 'blouse', 'lehenga']
-count = 0
 for class_name in lst2:
   s = str.capitalize(class_name.replace("_", " "))
   st.write(f"{s} \n")
-  
+  list = []
   for i in image_file:
-    col = st.columns(1)
-    with col: 
-      st.image(i, width = 100)
+    list.append(i)
+  st.image(list, width=150)
