@@ -30,4 +30,4 @@ lst2 = ['kurta_men', 'frock', 'jeans', 'shoes', 'gowns', 'pants', 'hoodie', 'sar
 for class_name in lst2:
   s = str.capitalize(class_name.replace("_", " "))
   st.write(f"{s} \n")
-  st.image(uploads) 
+  st.image('uploads/uploaded_image') 
