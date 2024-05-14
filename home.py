@@ -7,7 +7,7 @@ st.divider()
 
 # File uploader widget
 image_file = st.file_uploader("Choose images", accept_multiple_files=True, type=['jpg', 'png', 'jpeg'])
-
+os.path.abspath(image_file)
 if image_file is not None:
     st.image(image_file)
     with open(os.path.join("upload",image_file),"wb") as f: 
