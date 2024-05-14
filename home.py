@@ -7,6 +7,7 @@ st.divider()
 
 if not os.path.exists('upload'):
     os.makedirs('upload')
+st.write(os.path.abspath('upload'))
 # File uploader widget
 uploaded_images = st.file_uploader("Choose images", accept_multiple_files=True, type=['jpg', 'png', 'jpeg'])
 
