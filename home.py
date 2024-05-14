@@ -15,7 +15,7 @@ for uploaded_image in uploaded_images:
     if uploaded_image is not None:
         # Construct the file path
         file_path = os.path.join('upload', uploaded_image.name)
-        
+        st.writes(file_path)
         # Write the file to the specified directory
         with open(file_path, "wb") as f:
             f.write(uploaded_image.getbuffer())
@@ -30,4 +30,4 @@ lst2 = ['kurta_men', 'frock', 'jeans', 'shoes', 'gowns', 'pants', 'hoodie', 'sar
 for class_name in lst2:
   s = str.capitalize(class_name.replace("_", " "))
   st.write(f"{s} \n")
-  st.image(file_path) 
+  #st.image(file_path) 
